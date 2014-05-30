@@ -1,0 +1,51 @@
+maas:
+  :hosts:
+    - maas
+  :roles:
+    - base
+    - maas-region-controller
+    - maas-cluster-controller
+#maas-region-controller:
+#  :hosts:
+#    - maas-region-controller
+#  :roles:
+#    - base
+#    - maas-region-controller
+#maas-cluster-controller:
+#  :hosts:
+#    - maas-cluster-controller1
+#    - maas-cluster-controller2
+#  :roles:
+#    - base
+#    - maas-cluster-controller
+#hypervisor:
+#  :hosts:
+#    - hypervisor1
+#    - hypervisor2
+#  :roles:
+#    - base
+#    - hypervisor
+juju-bootstrap:
+  :hosts:
+    - juju-bootstrap
+  :roles:
+    - base
+    - node
+    - juju-bootstrap
+landscape:
+  :hosts:
+    - landscape
+  :roles:
+    - base
+    - node
+    - landscape
+node:
+  :hosts:
+    - node1
+    - node2
+    - node3
+    - node4
+    - node5
+  :roles:
+    - base
+    - node
