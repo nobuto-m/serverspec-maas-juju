@@ -12,23 +12,30 @@ Regarding serverspec itself, please refer:
 ```bash
 $ sudo apt-get intall --no-install-recommends ruby-serverspec
 ```
+(Ubuntu 14.04 LTS or higher)
 
 ## execute serverspec
 
-1. clone this repo
+1. clone this repo.
 
-    $ git clone https://github.com/nobuto-m/serverspec-maas-juju.git
+   ```bash
+$ git clone https://github.com/nobuto-m/serverspec-maas-juju.git
+```
 
-1. edit properties.yml to match your environment
+1. edit properties.yml to match your environment.
 
-    $ cd serverspec-maas-juju/
-    $ editor properties.yml
+   ```bash
+$ cd serverspec-maas-juju/
+$ editor properties.yml
+```
 
-1. run
+1. run.
 
-    $ rake spec --trace
+   ```bash
+$ rake spec --trace
+```
 
-You can also run spec per node
+You can also run spec per node.
 
 ```bash
 $ rake -T
