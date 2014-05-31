@@ -5,13 +5,15 @@ maas:
     - base
     - maas-region-controller
     - maas-cluster-controller
-  :bonding: true
+  :bonding: false
+  :ntp_server: 'ntp.ubuntu.com'
 #maas-region-controller:
 #  :hosts:
 #    - maas-region-controller
 #  :roles:
 #    - base
 #    - maas-region-controller
+#  :ntp_server: 'ntp.ubuntu.com'
 #maas-cluster-controller:
 #  :hosts:
 #    - maas-cluster-controller1
