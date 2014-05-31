@@ -7,7 +7,9 @@ maas:
     - maas-cluster-controller
   :bonding: false
   :ipmi_network: '10.99.0.0/16'
+  :virsh: true
   :ntp_server: 'ntp.ubuntu.com'
+  :timezone: 'Etc/UTC'
 #maas-region-controller:
 #  :hosts:
 #    - maas-region-controller
@@ -15,6 +17,7 @@ maas:
 #    - base
 #    - maas-region-controller
 #  :ntp_server: 'ntp.ubuntu.com'
+#  :timezone: 'Etc/UTC'
 #maas-cluster-controller:
 #  :hosts:
 #    - maas-cluster-controller1
@@ -23,6 +26,8 @@ maas:
 #    - base
 #    - maas-cluster-controller
 #  :ipmi_network: '10.99.0.0/16'
+#  :virsh: true
+#  :timezone: 'Etc/UTC'
 #hypervisor:
 #  :hosts:
 #    - hypervisor1
@@ -31,6 +36,9 @@ maas:
 #    - base
 #    - hypervisor
 #  :bonding: true
+#  :virsh_user: 'maas-virsh'
+#  :virsh_user_home: '/var/lib/maas-virsh'
+#  :timezone: 'Etc/UTC'
 juju-bootstrap:
   :hosts:
     - juju-bootstrap
@@ -38,6 +46,7 @@ juju-bootstrap:
     - base
     - node
     - juju-bootstrap
+  :timezone: 'Etc/UTC'
 node:
   :hosts:
     - node1
@@ -48,3 +57,4 @@ node:
   :roles:
     - base
     - node
+  :timezone: 'Etc/UTC'

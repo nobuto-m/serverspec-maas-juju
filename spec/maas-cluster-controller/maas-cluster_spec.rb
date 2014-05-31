@@ -6,6 +6,12 @@ describe package('maas-cluster-controller') do
   it { should be_installed }
 end
 
+if property[:virsh]
+  describe package('libvirt-bin') do
+    it { should be_installed }
+  end
+end
+
 services.each do |service|
   describe service("#{service}") do
     it { should be_enabled }
