@@ -11,7 +11,8 @@ properties = YAML.load_file('properties.yml')
 
 RSpec.configure do |c|
   c.host  = ENV['TARGET_HOST']
-  set_property properties[c.host]
+  service  = ENV['TARGET_SERVICE']
+  set_property properties[service]
   options = Net::SSH::Config.for(c.host)
   user    = property[:user] || 'ubuntu'
   c.ssh   = Net::SSH.start(c.host, user, options)
