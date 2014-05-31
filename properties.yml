@@ -44,7 +44,6 @@ juju-bootstrap:
     - juju-bootstrap
   :roles:
     - base
-    - node
     - juju-bootstrap
   :timezone: 'Etc/UTC'
 node:
