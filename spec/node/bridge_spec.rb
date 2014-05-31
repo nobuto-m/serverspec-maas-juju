@@ -1,0 +1,1 @@
+../juju-bootstrap/bridge_spec.rb
