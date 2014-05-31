@@ -1,7 +1,7 @@
 serverspec-maas-juju
 ====================
 
-This spec files assume to be executed on Juju client node with serverspec.
+This spec assumes to be executed on Juju client node with serverspec.
 
 Regarding serverspec itself, please refer:
  - http://serverspec.org/

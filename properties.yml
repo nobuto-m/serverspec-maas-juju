@@ -5,6 +5,7 @@ maas:
     - base
     - maas-region-controller
     - maas-cluster-controller
+  :bonding: true
 #maas-region-controller:
 #  :hosts:
 #    - maas-region-controller
@@ -25,6 +26,7 @@ maas:
 #  :roles:
 #    - base
 #    - hypervisor
+#  :bonding: true
 juju-bootstrap:
   :hosts:
     - juju-bootstrap
