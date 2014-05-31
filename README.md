@@ -40,7 +40,6 @@ You can also run spec per node.
 ```bash
 $ rake -T
 rake serverspec:juju-bootstrap  # Run serverspec to juju-bootstrap
-rake serverspec:landscape       # Run serverspec to landscape
 rake serverspec:maas            # Run serverspec to maas
 rake serverspec:node1           # Run serverspec to node1
 rake serverspec:node2           # Run serverspec to node2
