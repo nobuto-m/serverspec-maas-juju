@@ -2,6 +2,10 @@ require 'spec_helper'
 
 services=['bind9', 'maas-region-celery', 'maas-txlongpoll', 'postgresql', 'rabbitmq-server', 'squid-deb-proxy']
 
+describe package('maas-region-controller') do
+  it { should be_installed }
+end
+
 services.each do |service|
   describe service("#{service}") do
     it { should be_enabled }

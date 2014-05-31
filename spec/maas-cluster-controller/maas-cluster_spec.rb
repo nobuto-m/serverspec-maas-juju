@@ -2,6 +2,10 @@ require 'spec_helper'
 
 services=['maas-cluster-celery', 'maas-dhcp-server', 'maas-pserv']
 
+describe package('maas-cluster-controller') do
+  it { should be_installed }
+end
+
 services.each do |service|
   describe service("#{service}") do
     it { should be_enabled }
