@@ -7,7 +7,7 @@ maas:
     - maas-cluster-controller
   :bonding: false
   :ipmi_network: '10.99.0.0/16'
-  :virsh: true
+  #:virsh: true
   :ntp_server: 'ntp.ubuntu.com'
   :timezone: 'Etc/UTC'
 #maas-region-controller:
@@ -26,7 +26,7 @@ maas:
 #    - base
 #    - maas-cluster-controller
 #  :ipmi_network: '10.99.0.0/16'
-#  :virsh: true
+#  #:virsh: true
 #  :timezone: 'Etc/UTC'
 #hypervisor:
 #  :hosts:
