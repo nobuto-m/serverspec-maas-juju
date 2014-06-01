@@ -13,6 +13,9 @@ RSpec.configure do |c|
   c.host  = ENV['TARGET_HOST']
   service  = ENV['TARGET_SERVICE']
   set_property properties[service]
+  unless property[:sudo]
+    c.disable_sudo = true
+  end
   options = Net::SSH::Config.for(c.host)
   user    = property[:user] || 'ubuntu'
   c.ssh   = Net::SSH.start(c.host, user, options)

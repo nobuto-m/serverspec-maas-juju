@@ -36,6 +36,7 @@ maas:
 #    - base
 #    - hypervisor
 #  :bonding: true
+#  :sudo: true
 #  :virsh_user: 'maas-virsh'
 #  :virsh_user_home: '/var/lib/maas-virsh'
 #  :timezone: 'Etc/UTC'
