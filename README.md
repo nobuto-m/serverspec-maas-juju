@@ -48,3 +48,37 @@ rake serverspec:node4           # Run serverspec to node4
 rake serverspec:node5           # Run serverspec to node5
 rake spec                       # Run serverspec to all hosts
 ```
+
+## example output
+
+If the maas server is:
+ - not synced with upstream ntp servers
+ - not having any route to IPMI network
+ - not configured to manage DHCP and DNS
+ - not having boot resources
+
+The output will look like:
+
+```bash
+$ rake serverspec:maas --trace
+** Invoke serverspec:maas (first_time)
+** Execute serverspec:maas
+/usr/bin/ruby2.1 -S rspec spec/base/bonding_spec.rb spec/base/ntpd_spec.rb spec/base/timezone_spec.rb spec/maas-cluster-controller/ipmi_spec.rb spec/maas-cluster-controller/maas-cluster_spec.rb spec/maas-region-controller/internet-connectivity_spec.rb spec/maas-region-controller/maas-region_spec.rb
+FFF.F....F..FF.................F
+
+<snip>
+
+Finished in 6.73 seconds
+32 examples, 8 failures
+
+Failed examples:
+
+rspec ./spec/base/ntpd_spec.rb:4 # Service "ntp" should be enabled
+rspec ./spec/base/ntpd_spec.rb:5 # Service "ntp" should be running
+rspec ./spec/base/ntpd_spec.rb:9 # Command "ntpq -np | grep -q "^\*"" should return exit status 0
+rspec ./spec/maas-cluster-controller/ipmi_spec.rb:7 # Command "ip route" should return stdout /10\.99\.0\.0\/16 /
+rspec ./spec/maas-cluster-controller/maas-cluster_spec.rb:18 # Service "maas-dhcp-server" should be running
+rspec ./spec/maas-cluster-controller/maas-cluster_spec.rb:23 # File "/etc/maas/dhcpd.conf" content should match /^subnet /
+rspec ./spec/maas-cluster-controller/maas-cluster_spec.rb:27 # Command "test -L /var/lib/maas/boot-resources/current" should return exit status 0
+rspec ./spec/maas-region-controller/maas-region_spec.rb:17 # File "/etc/bind/maas/named.conf.maas" content should match /^zone /
+```

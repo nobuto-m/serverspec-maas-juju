@@ -6,6 +6,7 @@ maas:
     - maas-region-controller
     - maas-cluster-controller
   :bonding: false
+  :sudo: true
   :ipmi_network: '10.99.0.0/16'
   #:virsh: true
   :ntp_server: 'ntp.ubuntu.com'
@@ -16,6 +17,8 @@ maas:
 #  :roles:
 #    - base
 #    - maas-region-controller
+#  :bonding: false
+#  :sudo: true
 #  :ntp_server: 'ntp.ubuntu.com'
 #  :timezone: 'Etc/UTC'
 #maas-cluster-controller:
@@ -25,6 +28,7 @@ maas:
 #  :roles:
 #    - base
 #    - maas-cluster-controller
+#  :bonding: false
 #  :ipmi_network: '10.99.0.0/16'
 #  #:virsh: true
 #  :timezone: 'Etc/UTC'
